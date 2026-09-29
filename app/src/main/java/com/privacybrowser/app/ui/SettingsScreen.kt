@@ -195,9 +195,7 @@ private fun SettingsRow(title: String, subtitle: String? = null, onClick: () -> 
     ListItem(
         headlineContent = { Text(title) },
         supportingContent = subtitle?.let { { Text(it) } },
-        modifier = Modifier.fillMaxWidth().let {
-            it.then(androidx.compose.foundation.clickable(onClick = onClick))
-        }
+        modifier = Modifier.fillMaxWidth().clickable(onClick = onClick)
     )
 }
 
