@@ -214,8 +214,8 @@ private fun AddressBar(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     IconButton(onClick = onHome) { Icon(Icons.Filled.Home, contentDescription = "Home") }
-                    IconButton(onClick = onBack, enabled = canGoBack) { Icon(ArrowBack, contentDescription = "Back") }
-                    IconButton(onClick = onForward, enabled = canGoForward) { Icon(ArrowForward, contentDescription = "Forward") }
+                    IconButton(onClick = onBack, enabled = canGoBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back") }
+                    IconButton(onClick = onForward, enabled = canGoForward) { Icon(Icons.AutoMirrored.Filled.ArrowForward, contentDescription = "Forward") }
                     IconButton(onClick = onReload) { Icon(Icons.Filled.Refresh, contentDescription = "Reload") }
 
                     OutlinedTextField(
@@ -350,12 +350,10 @@ private fun BrowserWebView(
                 settings.setSupportZoom(true)
                 settings.builtInZoomControls = true
                 settings.displayZoomControls = false
-                settings.cacheMode = if (tab.isPrivate) WebView.LOAD_NO_CACHE else WebView.LOAD_DEFAULT
+                settings.cacheMode = if (tab.isPrivate) android.webkit.WebSettings.LOAD_NO_CACHE else android.webkit.WebSettings.LOAD_DEFAULT
 
-                android.webkit.CookieManager.getInstance().apply {
-                    setAcceptCookie(cookiesEnabled)
-                    setAcceptThirdPartyCookies(this@apply, false)
-                }
+                android.webkit.CookieManager.getInstance().setAcceptCookie(cookiesEnabled)
+                android.webkit.CookieManager.getInstance().setAcceptThirdPartyCookies(this, false)
 
                 webChromeClient = object : WebChromeClient() {
                     override fun onProgressChanged(view: WebView?, newProgress: Int) {

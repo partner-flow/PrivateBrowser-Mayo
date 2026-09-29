@@ -1,6 +1,7 @@
 package com.privacybrowser.app.ui
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -74,7 +75,7 @@ fun HistoryScreen(viewModel: BrowserViewModel, onBack: () -> Unit, onOpenUrl: (S
                                 Icon(Icons.Filled.Delete, contentDescription = "Delete entry")
                             }
                         },
-                        modifier = Modifier.clickable(entry.url, onOpenUrl)
+                        modifier = Modifier.clickable { onOpenUrl(entry.url) }
                     )
                     HorizontalDivider()
                 }
@@ -98,5 +99,3 @@ fun HistoryScreen(viewModel: BrowserViewModel, onBack: () -> Unit, onOpenUrl: (S
     }
 }
 
-private fun Modifier.clickable(url: String, onOpenUrl: (String) -> Unit): Modifier =
-    this.then(androidx.compose.foundation.clickable { onOpenUrl(url) })
