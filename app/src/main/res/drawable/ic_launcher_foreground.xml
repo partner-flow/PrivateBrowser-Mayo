@@ -10,11 +10,9 @@
     <path
         android:fillColor="#0D1B2A"
         android:pathData="M54,32 L70,39 V54 C70,66 62,75 54,80 C46,75 38,66 38,54 V39 Z" />
-    <circle
+    <path
         android:fillColor="#5AC8FA"
-        android:cx="54"
-        android:cy="52"
-        android:radius="6" />
+        android:pathData="M54,46 C57.314,46 60,48.686 60,52 C60,55.314 57.314,58 54,58 C50.686,58 48,55.314 48,52 C48,48.686 50.686,46 54,46 Z" />
     <path
         android:fillColor="#5AC8FA"
         android:pathData="M51,52 L51,64 L57,64 L57,52 Z" />
