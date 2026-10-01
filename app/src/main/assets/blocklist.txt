@@ -1,0 +1,29 @@
+# Private Browser tracker/ad blocklist
+# One host per line. Lines starting with # are comments.
+# This is a small starter list for the first version — see README for how to update it.
+doubleclick.net
+googlesyndication.com
+googleadservices.com
+google-analytics.com
+googletagmanager.com
+googletagservices.com
+facebook.net
+connect.facebook.net
+adnxs.com
+adsrvr.org
+scorecardresearch.com
+quantserve.com
+outbrain.com
+taboola.com
+criteo.com
+amazon-adsystem.com
+mopub.com
+applovin.com
+pubmatic.com
+rubiconproject.com
+adform.net
+moatads.com
+yieldmo.com
+bidswitch.net
+casalemedia.com
+smartadserver.com
