@@ -289,46 +289,25 @@ private fun AddressBar(
                     }
                 }
 
-                BoxWithConstraints(modifier = Modifier.fillMaxWidth()) {
-                    // Tablet / large-window breakpoint: Compose's own convention for "there is
-                    // genuinely a lot of horizontal room" (see Material's WindowSizeClass).
-                    if (maxWidth >= 600.dp) {
-                        Row(
-                            modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 6.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            HomeButton(onHome)
-                            BackButton(canGoBack, onBack)
-                            ForwardButton(canGoForward, onForward)
-                            ReloadButton(onReload)
-                            AddressField(text, onTextChange, onSubmit, Modifier.weight(1f))
-                            AllClearButton(onAllClearClick)
-                            TabsButton(tabCount, onTabsClick)
-                            MenuButton(onMenuClick)
-                        }
-                    } else {
-                        Column(modifier = Modifier.fillMaxWidth()) {
-                            Row(
-                                modifier = Modifier.fillMaxWidth().padding(horizontal = 8.dp, vertical = 6.dp),
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                AddressField(text, onTextChange, onSubmit, Modifier.weight(1f))
-                                AllClearButton(onAllClearClick)
-                                TabsButton(tabCount, onTabsClick)
-                                MenuButton(onMenuClick)
-                            }
-                            Row(
-                                modifier = Modifier.fillMaxWidth().padding(horizontal = 4.dp),
-                                horizontalArrangement = Arrangement.SpaceEvenly,
-                                verticalAlignment = Alignment.CenterVertically
-                            ) {
-                                HomeButton(onHome)
-                                BackButton(canGoBack, onBack)
-                                ForwardButton(canGoForward, onForward)
-                                ReloadButton(onReload)
-                            }
-                        }
-                    }
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 4.dp, vertical = 4.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    HomeButton(onHome)
+                    BackButton(canGoBack, onBack)
+                    ForwardButton(canGoForward, onForward)
+                    ReloadButton(onReload)
+                    AddressField(
+                        text,
+                        onTextChange,
+                        onSubmit,
+                        Modifier.weight(1f)
+                    )
+                    AllClearButton(onAllClearClick)
+                    TabsButton(tabCount, onTabsClick)
+                    MenuButton(onMenuClick)
                 }
             }
         }
