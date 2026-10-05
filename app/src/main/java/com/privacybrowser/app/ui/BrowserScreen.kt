@@ -21,10 +21,6 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.ArrowForward
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.ArrowForward
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -354,12 +350,12 @@ private fun HomeButton(onClick: () -> Unit) {
 
 @Composable
 private fun BackButton(enabled: Boolean, onClick: () -> Unit) {
-    IconButton(onClick = onClick, enabled = enabled) { Icon(ArrowBack, contentDescription = "Back") }
+    IconButton(onClick = onClick, enabled = enabled) { Text("←", style = MaterialTheme.typography.titleLarge) }
 }
 
 @Composable
 private fun ForwardButton(enabled: Boolean, onClick: () -> Unit) {
-    IconButton(onClick = onClick, enabled = enabled) { Icon(ArrowForward, contentDescription = "Forward") }
+    IconButton(onClick = onClick, enabled = enabled) { Text("→", style = MaterialTheme.typography.titleLarge) }
 }
 
 @Composable
